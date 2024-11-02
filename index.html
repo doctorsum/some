@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض الصور</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: linear-gradient(135deg, #f0f4f8, #c0cde0);
+            min-height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+        h1 {
+            font-size: 2em;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .image-container {
+            text-align: center;
+            width: 220px;
+            padding: 10px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .image-container:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .instruction {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>معرض الصور</h1>
+    <p>اضغط على أي صورة لتحميلها. بعد ذلك يمكنك فتح معرض الصور ومشاركتها عبر واتساب.</p>
+    <div class="gallery">
+        <div class="image-container">
+            <p class="instruction">اضغط لتحميل ومشاركة الصورة</p>
+            <a href="1.jpg" download="1.jpg">
+                <img src="1.jpg" alt="صورة 1">
+            </a>
+        </div>
+        <div class="image-container">
+            <p class="instruction">اضغط لتحميل ومشاركة الصورة</p>
+            <a href="2.jpg" download="2.jpg">
+                <img src="2.jpg" alt="صورة 2">
+            </a>
+        </div>
+        <div class="image-container">
+            <p class="instruction">اضغط لتحميل ومشاركة الصورة</p>
+            <a href="3.jpg" download="3.jpg">
+                <img src="3.jpg" alt="صورة 3">
+            </a>
+        </div>
+        <div class="image-container">
+            <p class="instruction">اضغط لتحميل ومشاركة الصورة</p>
+            <a href="4.jpg" download="4.jpg">
+                <img src="4.jpg" alt="صورة 4">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.image-container a').forEach(link => {
+            link.addEventListener('click', () => {
+                alert("تم تحميل الصورة، الآن يمكنك الذهاب إلى معرض الصور ومشاركتها عبر واتساب.");
+            });
+        });
+    </script>
+
+</body>
+</html>
